@@ -1,14 +1,21 @@
 import React from 'react'
 import * as S from './styled'
-const Repositories = () => {
+import { useHistory } from 'react-router-dom';
 
+const Repositories = () => {
+    const history = useHistory()
     const [repositories, setrepositories] = React.useState([]);
 
     React.useEffect(()=>{
         let repositoriesName = localStorage.getItem('repositoriesName')
-        repositoriesName =JSON.parse(repositoriesName);
-        setrepositories(repositoriesName)
-        localStorage.clear()
+        if(repositoriesName!=null){
+            repositoriesName =JSON.parse(repositoriesName);
+            setrepositories(repositoriesName)
+            localStorage.clear()
+        }else{
+            history.push('/')
+        }
+      
     },[])
     return (
         <>
@@ -20,6 +27,7 @@ const Repositories = () => {
                 )
             })}
         </S.List>
+           <S.LinkHome to='/' >Voltar</S.LinkHome> 
       </>
     )
 }
