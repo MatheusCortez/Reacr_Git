@@ -16,17 +16,22 @@ export const List = styled.ul`
 `
 
 export const ListItem = styled.li `
-    margin: .5rem 0;
+    margin: .8rem 0;
+    background-color:#000;
+    width:80%;
+    color:white;
+    text-transform:Uppercase;
+    padding:.8rem auto;
+    text-align:center;
 
 `
 
 
 export const LinkHome = styled(Link)`
     color:white;
-    display:block.
-    width:4rem;
+    width:15px;
     text-align:center;
-    margin:2rem auto;
+  
     background-color:#000;
 
 `
